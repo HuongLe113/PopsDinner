@@ -1,0 +1,22 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "blc",
+			"path": "popsDiner/bower_components/bootstrap/",
+			"problemMatcher": [],
+			"label": "npm: blc - popsDiner/bower_components/bootstrap",
+			"detail": "blc --exclude-external --filter-level 3 --get --ordered --recursive --host-requests 4 --input http://localhost:3000/"
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "popsDiner/bower_components/jQuery/",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build - popsDiner/bower_components/jQuery",
+			"detail": "npm install && grunt"
+		}
+	]
+}

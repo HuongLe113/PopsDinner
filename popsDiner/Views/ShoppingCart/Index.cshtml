@@ -1,0 +1,50 @@
+﻿
+@model ShoppingCartViewModel 
+@using System.Globalization
+<h2>Giỏ hàng của bạn.</h2>
+<h4>Đây là những món mà bạn đã chọn.</h4>
+<a class="btn btn-primary pull-right" asp-controller="ShoppingCart" asp-action="ClearShoppingCart">
+Xóa tất cả
+</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr style="border:3px solid grey;">
+            <th style="border:3px solid grey;">Số lượng</th>
+            <th style="border:3px solid grey;">Sản phẩm</th>
+            <th class="text-right" style="border:3px solid grey;">Gía</th>
+            <th class="text-right" style="border:3px solid grey;">Tổng giá</th>
+            <th> </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model.ShoppingCart.ShoppingCartItems)
+        {
+            <tr style="border:3px solid grey;">
+                <td class="text-center" style="border:3px solid grey;">@line.Amount</td>
+                <td class="text-left" style="border:3px solid grey;">@line.Item.Name</td>
+                <td class="text-right" style="border:3px solid grey;">@line.Item.Price.ToString("C3",CultureInfo.CreateSpecificCulture("vn-VN"))</td>
+                <td class="text-right" style="border:3px solid grey;">
+                    @((line.Amount * line.Item.Price).ToString("C3",CultureInfo.CreateSpecificCulture("vn-VN")))
+                </td>
+                <td style="border:3px solid grey;"> <div class="text-center">
+                    <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-itemid="@line.Item.ItemId">
+                    <span class="glyphicon glyphicon-remove"></span></a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr style="border:3px solid grey;">
+            <td style="border:3px solid grey;" colspan="3" class="text-right">Tổng tiền:</td>
+            <td class="text-right" style="border:3px solid grey;">
+                @Model.ShoppingCartTotal.ToString("C3",CultureInfo.CreateSpecificCulture("vn-VN"))
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<div class="text-center">
+    <a class="btn btn-primary" asp-controller="Order" asp-action="Checkout">Tiến hành mua!</a>
+</div>

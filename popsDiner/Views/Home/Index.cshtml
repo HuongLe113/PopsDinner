@@ -1,0 +1,16 @@
+﻿
+@model HomeViewModel
+
+@await Html.PartialAsync("Carousel")
+
+<h2>Những sản phẩm bán chạy</h2>
+<h4>Sự lựa chọn tuyệt vời dành cho bạn!</h4>
+
+<div class="row">
+
+    @foreach (var item in Model.ItemsOfTheWeek)
+    {
+        @Html.Partial("ItemOfTheWeek", item)
+    }
+
+</div>
