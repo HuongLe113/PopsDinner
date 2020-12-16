@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/site.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#31263E;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+                    @await Component.InvokeAsync("CategoryMenu")
+                    <li><a asp-controller="Contact" asp-action="Index">Liên hệ</a></li>
+                    @await Component.InvokeAsync("ShoppingCartSummary")
+                </ul>
+                @await Html.PartialAsync("LoginPartial")
+                <form class="navbar-form navbar-right" asp-controller="Item" asp-action="Search" method="get">
+                    <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Tim kiem thuc an,thuc uong" name="search">
+                  <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <p class="lead">
+                    <img class="img-responsive" alt="Bethany's Pie Shop'" src="~/Images/Pop's.jpg" />
+                </p>
+            </div>
+            <div class="col-md-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+<div class="footer">
+    <div class="footer-content">
+    <div class="footer-section about">
+        <h1>Về chúng tôi:</h1>
+        <p>
+            Cửa hàng chúng tôi cung cấp các thức ăn nhanh bao gồm nhiều loại như burger và các loại thức uống.
+        </p>
+        <div class="contactus">
+            <span><i class="fa fa-phone"></i>&nbsp; 123-456-789</span>
+        </div>
+        <div class="social-logo">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+             <a href="#"><i class="fa fa-instagram"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+</div>
+    <div class="footer-section link">
+        <h2>Link:
+            <ul>
+            <a href="#"><li>Sự kiện</li></a>
+              <a href="#"><li>Chương trình khuyến mãi</li></a>
+                <a href="#"><li>Môi trường</li></a>
+                  <a href="#"><li>Điều khoản hợp đồng</li></a>
+            </ul>
+    </div>
+
+    <div class="footer-section contact">
+        <h2>Liên hệ với chúng tôi:</h2>
+        <form asp-controller="Home" asp-action="Index" method="post">
+            <input type="email" name="email" class="text-input1 contact-input" placeholder="Nhập email của bạn">
+            <br>
+            <textarea name="textarea" class="text-input2 contact-input" placeholder="Nhập thông tin mà bạn muốn gửi"></textarea>
+            <br>
+
+        <button type="submit" class="btn btn-danger" name="submit" >Gửi</button>
+        </form>
+</div>
+    </div>
+    <div class="footer-bottom">
+        Copyright ©2020.All rights reserved|www.popsDrink.com 
+    </div>
+</div>
+</html>

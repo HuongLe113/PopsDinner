@@ -1,0 +1,17 @@
+D:\cleanarch\Application\bin\Debug\net5.0\Application.deps.json
+D:\cleanarch\Application\bin\Debug\net5.0\Application.dll
+D:\cleanarch\Application\bin\Debug\net5.0\ref\Application.dll
+D:\cleanarch\Application\bin\Debug\net5.0\Application.pdb
+D:\cleanarch\Application\bin\Debug\net5.0\Domain.dll
+D:\cleanarch\Application\bin\Debug\net5.0\Domain.pdb
+D:\cleanarch\Application\obj\Debug\net5.0\Application.csprojAssemblyReference.cache
+D:\cleanarch\Application\obj\Debug\net5.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\cleanarch\Application\obj\Debug\net5.0\Application.AssemblyInfoInputs.cache
+D:\cleanarch\Application\obj\Debug\net5.0\Application.AssemblyInfo.cs
+D:\cleanarch\Application\obj\Debug\net5.0\Application.csproj.CoreCompileInputs.cache
+D:\cleanarch\Application\obj\Debug\net5.0\Application.csproj.CopyComplete
+D:\cleanarch\Application\obj\Debug\net5.0\Application.dll
+D:\cleanarch\Application\obj\Debug\net5.0\ref\Application.dll
+D:\cleanarch\Application\obj\Debug\net5.0\Application.pdb
+D:\cleanarch\Application\bin\Debug\net5.0\Infrastructure.dll
+D:\cleanarch\Application\bin\Debug\net5.0\Infrastructure.pdb
